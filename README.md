@@ -6,7 +6,7 @@ Our team will create machine learning models to examine key factors that may lea
 
 The final model will use pre-processing methods to ensure the results of our individual models are comparable. We will then create an index using a classification algorithm to assign countries a value of 'immediate risk (in crisis)', 'high risk', 'moderate risk', and 'low risk'.
 
-This project will be beneficial to anyone with interest in geopolitics. Both firms and individuals with international interests could use this graph to make educated business, travel, and life decisions. We hope to package the project as an easy-to-navigate interactive infographic. 
+This project will be beneficial to anyone with interest in geopolitics. Both firms and individuals with international interests could use this graph to make educated business, travel, and life decisions. We hope to package the project as an easy-to-navigate interactive infographic.
 
 Note: We are attempting to share our data on a single postgres database on one ec2 cluster. Currently we are developing safe and secure access to this pipeline in a way that would allow us to share the data on the ec2 machine while using the computing power of our local machines to perform the analyses.
 
@@ -14,7 +14,9 @@ Note: We are attempting to share our data on a single postgres database on one e
 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
 
 #### Environmental ([Daniel Yawitz](https://github.com/yawitzd))
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+Data for the environmental algorithm comes primarily from the International Disasters Database (aka [EM-DAT](http://www.emdat.be/)), which contains a record of 7000 natural disasters since 1980, and the number of people displaced or affected. That data will be tied to a record of all major earthquakes (magnitude 5.3+) since 1988 from the United States Geological Survey ([USGS](http://earthquake.usgs.gov/earthquakes/search/)), and other data that measures the severity of other disasters (floods, storms, droughts, etc). The final model will use the severity of an event and other economic and political data to predict whether or not the disaster will displace a significant number of people.
+
+Foreseeable challenges include: tying the earthquake records (each event is a lat-long) to its EM_DAT record (by country), finding severity data for other types of disasters, and selecting enough features to not over-generalize this global model. 
 
 #### Terrorism ([Kenneth Chadwick](https://github.com/outsideken))
 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
