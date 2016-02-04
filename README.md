@@ -1,12 +1,14 @@
 # Humanitarian Unrest Classifier
 ## Project McNulty: Team Saving the World
-Welcome to Project McNulty. The motivation behind this project is to identify areas in the world that may be susceptible to humanitarian unrest, specifically focusing on crises that might prompt a mass migration of refugees.
+Welcome to Project McNulty. Our goal is to identify areas in the world that may be susceptible to humanitarian unrest, specifically focusing on crises that might prompt a mass migration of refugees.
 
-Our team will approach the question by seeking to individually create machine learning models within identified key areas that may lead to humanitarian unrest: economic, environmental and climatic, terrorism and national security, political and population demographics, and food. We will use PCA and other pre-processing methods, choose an appropriate model, and use the output of individual predictions as features for a final model.
+Our team will create machine learning models to examine key factors that may lead to humanitarian unrest: economic, environmental and climatic, terrorism and national security, political and population demographics, and food. We will use PCA and other pre-processing methods, choose an appropriate model, and use the output of individual predictions as features for a final model.
 
-Our final model will use pre-processing methods to ensure that the results of our individual models are comparable. We will then create an index using a classification algorithm to assign countries a value of 'immediate risk (in crisis)', 'high risk', 'moderate risk', and 'low risk'.
+The final model will use pre-processing methods to ensure the results of our individual models are comparable. We will then create an index using a classification algorithm to assign countries a value of 'immediate risk (in crisis)', 'high risk', 'moderate risk', and 'low risk'.
 
-Note: We are attempting to share our data on a single postgres database on one ec2 cluster. Currently we are in the process of developing safe and secure access to this pipeline in a way that would allow us to share the data on the ec2 machine while using the computing power of our local machines to perform the analyses.
+This project will be beneficial to anyone with interest in geopolitics. Both firms and individuals with international interests could use this graph to make educated business, travel, and life decisions. We hope to package the project as an easy-to-navigate interactive infographic. 
+
+Note: We are attempting to share our data on a single postgres database on one ec2 cluster. Currently we are developing safe and secure access to this pipeline in a way that would allow us to share the data on the ec2 machine while using the computing power of our local machines to perform the analyses.
 
 #### Economic ([Bryan Bumgardner](https://github.com/BryanBumgardner))
 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
