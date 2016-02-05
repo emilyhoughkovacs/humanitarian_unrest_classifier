@@ -8,7 +8,7 @@ The final model will use pre-processing methods to ensure the results of our ind
 
 This project will be beneficial to anyone with interest in geopolitics. Both firms and individuals with international interests could use this graph to make educated business, travel, and life decisions. We hope to package the project as an easy-to-navigate interactive infographic.
 
-Note: We are attempting to share our data on a single postgres database on one ec2 cluster. Currently we are developing safe and secure access to this pipeline in a way that would allow us to share the data on the ec2 machine while using the computing power of our local machines to perform the analyses.
+We are sharing our data on a single database on one ec2 server. We are using Postico, a graphical interface, to locally connect to this shared postgres database.
 
 #### Economic ([Bryan Bumgardner](https://github.com/BryanBumgardner))
 The idea is simple: if you are in poverty, you aren't happy about it. Also, if something bad happens (war, natural disaster, change in leadership) poverty exacerbates the situation. The World Bank keeps detailed records of something known as Gross Domestic Product Price Per Parity, which creates a GDP that adjusts for exchange rate across currencies. Logically, countries with worse GDP have worse political stability, bigger challenges coping with natural disasters, and lower quality of life. Using GDP PPP and tracing how it changes through time, I can apply this to the other data and identify countries that struggle to cope with crisis-causing factors.
