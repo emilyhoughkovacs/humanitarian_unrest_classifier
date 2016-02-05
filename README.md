@@ -18,8 +18,8 @@ Data for the environmental algorithm comes primarily from the International Disa
 
 Foreseeable challenges include: tying the earthquake records (each event is a lat-long) to its EM_DAT record (by country), finding severity data for other types of disasters, and selecting enough features to not over-generalize this global model.
 
-#### Terrorism ([Kenneth Chadwick](https://github.com/outsideken))
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+#### Security & Terrorism ([Kenneth Chadwick](https://github.com/outsideken))
+This feature is developed from a number of indices developed by thinktanks and nonprofits such as the Institute for Economics and Peace (IEP) and the Council on Foreign Releations (CFR) that cover acts of terrorism, insurgencies, and border disputes.  IEP's Global Peace Index (GPI) is also included in this feature.  The data is sourced from a wide range of respected sources, including the International Institute of Strategic Studies, The World Bank, various UN Agencies, peace institutes and the EIU.  Each of these indices are combined in a weighted model to produce an overall Security & Terrorism score.
 
 #### Political and Demographics ([Ken Myers](https://github.com/kennmyers))
 Since 1995, Transparency International has kept a Corruption Perception Index on countries around the world. [According to their website](http://www.transparency.org/research/cpi/overview), this index's purpose is to 'score countries on how corrupt their public sectors are seen to be.' Fortunately for us, someone else has already compiled [all of this data into a single file](https://github.com/datasets/corruption-perceptions-index). The biggest challenge with this data is that after 2010 their method of indexing changed. The most likely options are to either exclude the latest data or to normalize the scores by each year.
