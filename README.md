@@ -6,6 +6,8 @@ Our team will create machine learning models to examine key factors that may lea
 
 The final model will use pre-processing methods to ensure the results of our individual models are comparable. We will then create an index using a classification algorithm to assign countries a value of 'immediate risk (in crisis)', 'high risk', 'moderate risk', and 'low risk'.
 
+![Classification Index Categories](https://github.com/emilyhoughkovacs/humanitarian_unrest_classifier/blob/master/graphics/categories.png)
+
 This project will be beneficial to anyone with interest in geopolitics. Both firms and individuals with international interests could use this graph to make educated business, travel, and life decisions. We hope to package the project as an easy-to-navigate interactive infographic.
 
 We are sharing our data on a single database on one ec2 server. We are using Postico, a graphical interface, to locally connect to this shared postgres database.
