@@ -21,6 +21,10 @@ Foreseeable challenges include: tying the earthquake records (each event is a la
 #### Security & Terrorism ([Kenneth Chadwick](https://github.com/outsideken))
 This feature is developed from a number of indices developed by thinktanks and nonprofits such as the Institute for Economics and Peace (IEP) and the Council on Foreign Releations (CFR) that cover acts of terrorism, insurgencies, and border disputes.  IEP's Global Peace Index (GPI) is also included in this feature.  The data is sourced from a wide range of respected sources, including the International Institute of Strategic Studies, The World Bank, various UN Agencies, peace institutes and the EIU.  Each of these indices are combined in a weighted model to produce an overall Security & Terrorism score.
 
+Sources:
+* Council on Foreign Relations (CFR), [Invisible Armies Insugency Tracker](http://www.cfr.org/wars-and-warfare/invisible-armies-insurgency-tracker/p29917)
+* Institute for Economics and Peace (IEP), [Global Peace Index 2015](http://economicsandpeace.org/wp-content/uploads/2015/06/Global-Peace-Index-Report-2015_0.pdf)
+
 #### Political and Demographics ([Ken Myers](https://github.com/kennmyers))
 Since 1995, Transparency International has kept a Corruption Perception Index on countries around the world. [According to their website](http://www.transparency.org/research/cpi/overview), this index's purpose is to 'score countries on how corrupt their public sectors are seen to be.' Fortunately for us, someone else has already compiled [all of this data into a single file](https://github.com/datasets/corruption-perceptions-index). The biggest challenge with this data is that after 2010 their method of indexing changed. The most likely options are to either exclude the latest data or to normalize the scores by each year.
 
@@ -28,3 +32,7 @@ Age and gender demographics data from [The World Bank](http://data.worldbank.org
 
 #### Food ([Emily Hough-Kovacs](https://github.com/emilyhoughkovacs/))
 The data for the food algorithm comes primarily from the World Food Programme's [global food prices database](https://data.hdx.rwlabs.org/dataset/wfp-food-prices/resource/b5b850a5-76da-4c33-a410-fd447deac042). This 580,000 row database contains monthly price information on many food prices in markets across the globe. The advantage of this data is that it is precise to the city level (country, region and city) as well as to the month level. The prediction algorithm will be chosen by what best optimizes time-series at that level. Some foreseeable roadblocks include prices that may be reported in local currencies. Another consideration is considering the purchasing power of a citizen in each region. Further exploratory analysis may be required.
+
+#### Additional Background Reading on Internally Displaced Persons and Refugees:
+* [Internal Displacement Monitoring Centre (IDMC)](http://www.internal-displacement.org/)
+* [United Nations High Commission on Refugees](http://www.unhcr.org/cgi-bin/texis/vtx/home)
