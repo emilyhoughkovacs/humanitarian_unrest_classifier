@@ -62,6 +62,7 @@ select {
 <body>
 <h1>Refugee Map</h1>
 <h3>Mcnulty Project, Metis</h3>
+<p>names</p>
   <script>
 
   var width = 600,
@@ -69,7 +70,7 @@ select {
   sens = 0.25,
   focused;
 
-  //Setting projection. Don't touch this 
+  //Setting projection. Don't touch this. SERIOUSLY DONT TOUCH THIS OMG 
 
   var projection = d3.geo.orthographic()
   .scale(245)
@@ -158,6 +159,7 @@ select {
     });
 
     //Country focus on option select. This helps direct the spinning of the globe and centers the country selected on the dropdown menu.
+    // Map zooming from mbostock: http://bl.ocks.org/mbostock/6242308
 
     d3.select("select").on("change", function() {
       var rotate = projection.rotate(),
