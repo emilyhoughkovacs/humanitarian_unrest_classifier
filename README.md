@@ -23,7 +23,8 @@ This feature is developed from a number of indices developed by thinktanks and n
 
 Sources:
 * Council on Foreign Relations (CFR), [Invisible Armies Insugency Tracker](http://www.cfr.org/wars-and-warfare/invisible-armies-insurgency-tracker/p29917)
-* Institute for Economics and Peace (IEP), [Global Peace Index 2015](http://economicsandpeace.org/wp-content/uploads/2015/06/Global-Peace-Index-Report-2015_0.pdf)
+* Institute for Economics and Peace (IEP), [Global Peace Index 2015](http://economicsandpeace.org/wp-content/uploads/2015/06/Global-Peace-Index-Report-2015_0.pdf),  [Global Terror Index](http://economicsandpeace.org/wp-content/uploads/2015/11/Global-Terrorism-Index-2015.pdf)
+* Uppsala Universitet, Depaterment of Peace and Conflict Research, Conflict Data Program - [UCDP/PRIO Armed Conflict Dataset v.4-2015, 1946 – 2014](http://www.pcr.uu.se/research/ucdp/datasets/ucdp_prio_armed_conflict_dataset/)
 
 #### Political and Demographics ([Ken Myers](https://github.com/kennmyers))
 Since 1995, Transparency International has kept a Corruption Perception Index on countries around the world. [According to their website](http://www.transparency.org/research/cpi/overview), this index's purpose is to 'score countries on how corrupt their public sectors are seen to be.' Fortunately for us, someone else has already compiled [all of this data into a single file](https://github.com/datasets/corruption-perceptions-index). The biggest challenge with this data is that after 2010 their method of indexing changed. The most likely options are to either exclude the latest data or to normalize the scores by each year.
@@ -36,3 +37,4 @@ The data for the food algorithm comes primarily from the World Food Programme's 
 #### Additional Background Reading on Internally Displaced Persons and Refugees:
 * [Internal Displacement Monitoring Centre (IDMC)](http://www.internal-displacement.org/)
 * [United Nations High Commission on Refugees](http://www.unhcr.org/cgi-bin/texis/vtx/home)
+* [Uppsala Universitet, Depaterment of Peace and Conflict Research, Conflict Data Program](http://www.pcr.uu.se/research/ucdp/)
