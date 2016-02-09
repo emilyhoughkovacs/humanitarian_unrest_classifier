@@ -23,7 +23,7 @@ This feature is developed from a number of indices developed by thinktanks and n
 
 Sources:
 * Council on Foreign Relations (CFR), [Invisible Armies Insugency Tracker](http://www.cfr.org/wars-and-warfare/invisible-armies-insurgency-tracker/p29917)
-* Institute for Economics and Peace (IEP), [Global Peace Index 2015](http://economicsandpeace.org/wp-content/uploads/2015/06/Global-Peace-Index-Report-2015_0.pdf),  [Global Terror Index](http://economicsandpeace.org/wp-content/uploads/2015/11/Global-Terrorism-Index-2015.pdf)
+* Institute for Economics and Peace (IEP), [Global Peace Index 2015](http://economicsandpeace.org/wp-content/uploads/2015/06/Global-Peace-Index-Report-2015_0.pdf),  [Global Terror Index 2015](http://economicsandpeace.org/wp-content/uploads/2015/11/Global-Terrorism-Index-2015.pdf)
 * Uppsala Universitet, Depaterment of Peace and Conflict Research, Conflict Data Program - [UCDP/PRIO Armed Conflict Dataset v.4-2015, 1946 – 2014](http://www.pcr.uu.se/research/ucdp/datasets/ucdp_prio_armed_conflict_dataset/)
 
 #### Political and Demographics ([Ken Myers](https://github.com/kennmyers))
