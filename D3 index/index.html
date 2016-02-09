@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<!-- The needs, in priority importance:
+- I'm assuming we will need to add country data to the .tsv file - is there a better way?
+- Countries must be colored by ranking code, right now they're colored in the CSS.
+- We'll need to add an info box to appear whenever a country is selected by the dropdown list. 
+- We should give the globe the ability to be dragged and clicked. 
+-->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -88,8 +94,8 @@ select {
 
 
   queue()
-  .defer(d3.json, "world-110m.json")
-  .defer(d3.tsv, "world-110m-country-names.tsv")
+  .defer(d3.json, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/D3%20index/world-110m.json")
+  .defer(d3.tsv, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/D3%20index/world-110m-country-names.tsv")
   .await(ready);
 
   //Main function
@@ -107,6 +113,8 @@ select {
       option.text(d.name);
       option.property("value", d.id);
     });
+
+    // Would we need to put additional country data here? 
 
     //Drawing countries on the globe
 
