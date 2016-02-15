@@ -15,9 +15,10 @@ The idea is simple: if you are in poverty, you aren't happy about it. Also, if s
 - The Gini Coefficient: the most commonly used way of measuring wealth distribution. The larger the wealth gap, the most restless the poorer residents.
 - Unemployment of youth, and also general unemployment.
 - GDP per capita, normalized by the current PPP (international dollar).
-
-
-something known as Gross Domestic Product Price Per Parity, which creates a GDP that adjusts for exchange rate across currencies. Logically, countries with worse GDP have worse political stability, bigger challenges coping with natural disasters, and lower quality of life. Using GDP PPP and tracing how it changes through time, I can apply this to the other data and identify countries that struggle to cope with crisis-causing factors.
+- GDP per capita growth from the previous year for the bottom 40% of the population.
+- Food imports as a percentage.
+- Total labor force participation. 
+With these economic factors accounted for, our model will get a clearer look at the health of a country on some specific measures. 
 
 #### Environmental ([Daniel Yawitz](https://github.com/yawitzd))
 Data for the environmental algorithm comes primarily from the International Disasters Database (aka [EM-DAT](http://www.emdat.be/)), which contains a record of 7000 natural disasters since 1980, and the number of people displaced or affected. That data will be tied to a record of all major earthquakes (magnitude 5.3+) since 1988 from the United States Geological Survey ([USGS](http://earthquake.usgs.gov/earthquakes/search/)), and other data that measures the severity of other disasters (floods, storms, droughts, etc). The final model will use the severity of an event and other economic and political data to predict whether or not the disaster will displace a significant number of people.
