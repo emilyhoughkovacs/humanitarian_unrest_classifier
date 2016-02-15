@@ -97,7 +97,7 @@ select {
   var countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
   countryList = d3.select("body").append("select").attr("name", "countries");
 
-
+// This calls up our json and tsv of shapes of countries and their names. 
   queue()
   .defer(d3.json, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/D3%20index/world-110m.json")
   .defer(d3.tsv, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/D3%20index/world-110m-country-names.tsv")
