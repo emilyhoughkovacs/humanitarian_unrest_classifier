@@ -35,6 +35,8 @@ Sources:
 #### Political and Demographics ([Ken Myers](https://github.com/kennmyers))
 Since 1995, Transparency International has kept a Corruption Perception Index on countries around the world. [According to their website](http://www.transparency.org/research/cpi/overview), this index's purpose is to 'score countries on how corrupt their public sectors are seen to be.' Fortunately for us, someone else has already compiled [all of this data into a single file](https://github.com/datasets/corruption-perceptions-index). The biggest challenge with this data is that after 2010 their method of indexing changed. The most likely options are to either exclude the latest data or to normalize the scores by each year.
 
+This political data will be combined with data from [Freedom House](https://freedomhouse.org/report/freedom-world/freedom-world-2016) which keeps an index on the political rights, civil liberties, freedom status of countries around the world.
+
 Age and gender demographics data from [The World Bank](http://data.worldbank.org/indicator) will also be analyzed. I used the dataset available from [Kaggle](https://www.kaggle.com/worldbank/world-development-indicators) which is slightly transformed from the original data. From these sets of data we will try to see if it is possible to predict a country's risk of a humanitarian crisis by their corruption perception and the their population's demographic. Such as, if a population has a higher percentage of males or a higher percentage of younger people, are they more likely to enter a crisis when they perceive their country as being corrupt.
 
 #### Food ([Emily Hough-Kovacs](https://github.com/emilyhoughkovacs/))
