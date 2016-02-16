@@ -1,0 +1,5 @@
+username:emily
+password:grnk25
+ip:54.208.89.163
+port:5432
+database:emily
