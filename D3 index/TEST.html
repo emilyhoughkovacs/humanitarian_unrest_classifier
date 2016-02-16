@@ -97,14 +97,15 @@ select {
   .attr("d", path);
 
   var countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
-  countryList = d3.select("body").append("select").attr("name", "countries");
+  countryList = d3.select("body").append("select").attr("countryname", "countries");
 
 // This calls up our json and tsv of shapes of countries and their names. 
   queue()
   .defer(d3.json, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/D3%20index/world-110m.json")
-  .defer(d3.tsv, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/D3%20index/world-110m-country-names.tsv")
+  .defer(d3.tsv, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/D3%20index/randomnums.tsv")
   .await(ready);
-
+  //world-110m-country-names.tsv
+  //randomnums.tsv
   //Main function
 
   function ready(error, world, countryData) {
@@ -131,7 +132,7 @@ select {
     .enter().append("path")
     .attr("class", "land")
     .attr("d", path)
-    .style("fill", 
+    .style("fill", color)
 
     //Drag event. Modify this here to control the movement of the globe - we want freehand based on the other model, pinch and zoom is dangerous, can we use a JS slider? http://andreruffert.github.io/rangeslider.js/?utm_content=buffer3f382&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
 
