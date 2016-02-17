@@ -111,15 +111,15 @@ select {
     var countryById = {},
     countries = topojson.feature(world, world.objects.countries).features;
 
+    var colorById = {};
     //Adding countries to select. Don't touch this. 
 
     countryData.forEach(function(d) {
       countryById[d.id] = d.name;
-      d.colortest = +d.colortest;
+      colorById[d.id] = d.colortest;
       option = countryList.append("option");
       option.text(d.name);
       option.property("value", d.id)
-      
     });
 
     // Would we need to put additional country data here? 
@@ -127,7 +127,7 @@ select {
 
     // Right here is the color testing 
     var colorscale = d3.scale.category20();
-
+    //var colornames = 
     //Drawing countries on the globe. Don't touch this either 
 
 
@@ -136,8 +136,7 @@ select {
     .enter().append("path")
     .attr("class", "land")
     .attr("d", path)
-    .style("fill", function(d, i) { return colorscale(d.colortest); })
-
+    .style("fill", function(d,i) { return colorscale(colorById[d.id]); })
     //Drag event. Modify this here to control the movement of the globe - we want freehand based on the other model, pinch and zoom is dangerous, can we use a JS slider? http://andreruffert.github.io/rangeslider.js/?utm_content=buffer3f382&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
 
     .call(d3.behavior.drag()
