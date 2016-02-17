@@ -1,0 +1,250 @@
+countrycodenumeric,countrycode,countryname,colortest
+4,AFG,Afghanistan,4
+8,ALB,Albania,3
+10,ATA,Antarctica,2
+12,DZA,Algeria,1
+16,ASM,American Samoa,4
+20,AND,Andorra,3
+24,AGO,Angola,2
+28,ATG,Antigua and Barbuda,1
+31,AZE,Azerbaijan,1
+32,ARG,Argentina,1
+36,AUS,Australia,1
+40,AUT,Austria,1
+44,BHS,"Bahamas, The",1
+48,BHR,Bahrain,1
+50,BGD,Bangladesh,2
+51,ARM,Armenia,2
+52,BRB,Barbados,2
+56,BEL,Belgium,2
+60,BMU,Bermuda,2
+64,BTN,Bhutan,2
+68,BOL,Bolivia,2
+70,BIH,Bosnia and Herzegovina,2
+72,BWA,Botswana,2
+74,BVT,Bouvet Island,2
+76,BRA,Brazil,2
+84,BLZ,Belize,2
+86,IOT,British Indian Ocean Territory,2
+90,SLB,Solomon Islands,2
+92,VGB,British Virgin Islands,3
+96,BRN,Brunei,3
+100,BGR,Bulgaria,3
+104,MMR,Burma,3
+108,BDI,Burundi,3
+112,BLR,Belarus,3
+116,KHM,Cambodia,3
+120,CMR,Cameroon,3
+124,CAN,Canada,3
+132,CPV,Cabo Verde,3
+136,CYM,Cayman Islands,3
+140,CAF,Central African Republic,3
+144,LKA,Sri Lanka,3
+148,TCD,Chad,4
+152,CHL,Chile,4
+156,CHN,China,4
+158,TWN,Taiwan,4
+162,CXR,Christmas Island,4
+166,CCK,Cocos (Keeling) Islands,4
+170,COL,Colombia,4
+174,COM,Comoros,4
+175,MYT,Mayotte,4
+178,COG,"Congo, Republic of the",4
+180,COD,"Congo, Democratic Republic of the",4
+184,COK,Cook Islands,4
+188,CRI,Costa Rica,4
+191,HRV,Croatia,4
+192,CUB,Cuba,4
+196,CYP,Cyprus,4
+203,CZE,Czech Republic,4
+204,BEN,Benin,4
+208,DNK,Denmark,4
+212,DMA,Dominica,4
+214,DOM,Dominican Republic,5
+218,ECU,Ecuador,5
+222,SLV,El Salvador,5
+226,GNQ,Equatorial Guinea,5
+231,ETH,Ethiopia,5
+232,ERI,Eritrea,5
+233,EST,Estonia,5
+234,FRO,Faroe Islands,5
+238,FLK,Falkland Islands (Islas Malvinas),5
+239,SGS,South Georgia and the Islands,5
+242,FJI,Fiji,5
+246,FIN,Finland,5
+249,FXX,"France, Metropolitan",5
+250,FRA,France,5
+254,GUF,French Guiana,2
+258,PYF,French Polynesia,2
+260,ATF,French Southern and Antarctic Lands,2
+262,DJI,Djibouti,2
+266,GAB,Gabon,2
+268,GEO,Georgia,2
+270,GMB,"Gambia, The",2
+275,PSE,Gaza Strip,2
+275,PSE,West Bank,2
+276,DEU,Germany,2
+288,GHA,Ghana,2
+292,GIB,Gibraltar,2
+296,KIR,Kiribati,2
+300,GRC,Greece,2
+304,GRL,Greenland,4
+308,GRD,Grenada,3
+312,GLP,Guadeloupe,3
+316,GUM,Guam,3
+320,GTM,Guatemala,3
+324,GIN,Guinea,3
+328,GUY,Guyana,3
+332,HTI,Haiti,3
+334,HMD,Heard Island and McDonald Islands,3
+336,VAT,Holy See (Vatican City),3
+340,HND,Honduras,3
+344,HKG,Hong Kong,3
+348,HUN,Hungary,3
+352,ISL,Iceland,4
+356,IND,India,4
+360,IDN,Indonesia,4
+364,IRN,Iran,4
+368,IRQ,Iraq,4
+372,IRL,Ireland,4
+376,ISR,Israel,4
+380,ITA,Italy,4
+384,CIV,Cote d'Ivoire,4
+388,JAM,Jamaica,5
+392,JPN,Japan,5
+398,KAZ,Kazakhstan,5
+400,JOR,Jordan,5
+404,KEN,Kenya,5
+408,PRK,"Korea, North",5
+410,KOR,"Korea, South",5
+414,KWT,Kuwait,5
+417,KGZ,Kyrgyzstan,5
+418,LAO,Laos,5
+422,LBN,Lebanon,5
+426,LSO,Lesotho,5
+428,LVA,Latvia,5
+430,LBR,Liberia,5
+434,LBY,Libya,5
+438,LIE,Liechtenstein,4
+440,LTU,Lithuania,4
+442,LUX,Luxembourg,4
+446,MAC,Macau,4
+450,MDG,Madagascar,2
+454,MWI,Malawi,2
+458,MYS,Malaysia,2
+462,MDV,Maldives,2
+466,MLI,Mali,2
+470,MLT,Malta,2
+474,MTQ,Martinique,2
+478,MRT,Mauritania,2
+480,MUS,Mauritius,2
+484,MEX,Mexico,2
+492,MCO,Monaco,2
+496,MNG,Mongolia,2
+498,MDA,Moldova,2
+499,MNE,Montenegro,2
+500,MSR,Montserrat,2
+504,MAR,Morocco,2
+508,MOZ,Mozambique,2
+512,OMN,Oman,2
+516,NAM,Namibia,2
+520,NRU,Nauru,2
+524,NPL,Nepal,2
+528,NLD,Netherlands,2
+531,CUW,Curacao,2
+533,ABW,Aruba,2
+534,SXM,Sint Maarten,2
+540,NCL,New Caledonia,2
+548,VUT,Vanuatu,2
+554,NZL,New Zealand,2
+558,NIC,Nicaragua,4
+562,NER,Niger,3
+566,NGA,Nigeria,3
+570,NIU,Niue,3
+574,NFK,Norfolk Island,3
+578,NOR,Norway,3
+580,MNP,Northern Mariana Islands,3
+581,UMI,United States Minor Outlying Islands,3
+583,FSM,"Micronesia, Federated States of",3
+584,MHL,Marshall Islands,3
+585,PLW,Palau,3
+586,PAK,Pakistan,3
+591,PAN,Panama,3
+598,PNG,Papua New Guinea,3
+600,PRY,Paraguay,1
+604,PER,Peru,1
+608,PHL,Philippines,1
+612,PCN,Pitcairn Islands,1
+616,POL,Poland,1
+620,PRT,Portugal,1
+624,GNB,Guinea-Bissau,1
+626,TLS,Timor-Leste,1
+630,PRI,Puerto Rico,1
+634,QAT,Qatar,1
+638,REU,Reunion,1
+642,ROU,Romania,1
+643,RUS,Russia,1
+646,RWA,Rwanda,1
+652,BLM,Saint Barthelemy,1
+654,SHN,"Saint Helena, Ascension, and Tristan da Cunha",1
+659,KNA,Saint Kitts and Nevis,1
+660,AIA,Anguilla,1
+662,LCA,Saint Lucia,1
+663,MAF,Saint Martin,4
+666,SPM,Saint Pierre and Miquelon,4
+670,VCT,Saint Vincent and the Grenadines,4
+674,SMR,San Marino,4
+678,STP,Sao Tome and Principe,4
+682,SAU,Saudi Arabia,4
+686,SEN,Senegal,4
+688,SRB,Serbia,2
+690,SYC,Seychelles,2
+694,SLE,Sierra Leone,2
+702,SGP,Singapore,2
+703,SVK,Slovakia,2
+704,VNM,Vietnam,2
+705,SVN,Slovenia,2
+706,SOM,Somalia,2
+710,ZAF,South Africa,2
+716,ZWE,Zimbabwe,2
+724,ESP,Spain,2
+728,SSD,South Sudan,2
+729,SDN,Sudan,2
+732,ESH,Western Sahara,2
+740,SUR,Suriname,2
+744,SJM,Svalbard,4
+748,SWZ,Swaziland,4
+752,SWE,Sweden,4
+756,CHE,Switzerland,4
+760,SYR,Syria,4
+762,TJK,Tajikistan,4
+764,THA,Thailand,4
+768,TGO,Togo,3
+772,TKL,Tokelau,3
+776,TON,Tonga,3
+780,TTO,Trinidad and Tobago,3
+784,ARE,United Arab Emirates,3
+788,TUN,Tunisia,3
+792,TUR,Turkey,3
+795,TKM,Turkmenistan,3
+796,TCA,Turks and Caicos Islands,3
+798,TUV,Tuvalu,3
+800,UGA,Uganda,3
+804,UKR,Ukraine,3
+807,MKD,Macedonia,3
+818,EGY,Egypt,3
+826,GBR,United Kingdom,3
+831,GGY,Guernsey,3
+832,JEY,Jersey,4
+833,IMN,Isle of Man,4
+834,TZA,Tanzania,4
+840,USA,United States,1
+850,VIR,Virgin Islands,1
+854,BFA,Burkina Faso,1
+858,URY,Uruguay,1
+860,UZB,Uzbekistan,1
+862,VEN,Venezuela,1
+876,WLF,Wallis and Futuna,1
+882,WSM,Samoa,4
+887,YEM,Yemen,4
+894,ZMB,Zambia,4
