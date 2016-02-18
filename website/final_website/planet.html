@@ -14,23 +14,42 @@
 body {
   background: #000000
 }
-
+div.text {
+  padding: 50px;
+  margin: 50px;
+  vertical-align: center;
+}
+div.chart {
+  margin: 50px;
+  vertical-align: center;
+}
+script {
+  margin: 50px;
+}
+ul {
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 25px;
+  margin: 25px;
+  font-family: helvetica;
+  font-weight: normal;
+}
 p
   {
   font-size:14px;
-  font-family:arial;
+  font-family:helvetica;
   color:white;
   }
 h1
   {
   font-size:51px;
-  font-family:arial;
+  font-family:helvetica;
   color:white;
   }
 h3
   {
   font-size:37px;
-  font-family:arial;
+  font-family:helvetica;
   color:white;
   }
 
@@ -81,15 +100,13 @@ select {
 <h3>Mcnulty Project, Metis</h3>
 <p>names</p>
 
-
+<div class="chart">
   <script>
 
  var width = 600,
   height = 500,
   sens = 0.25,
   focused;
-
-  //Setting projection. Don't touch this. SERIOUSLY DONT TOUCH THIS OMG 
 
   var projection = d3.geo.orthographic()
   .scale(245)
@@ -106,10 +123,6 @@ select {
   .attr("width", width)
   .attr("height", height);
 
-
-
-  //Adding water
-
   svg.append("path")
   .datum({type: "Sphere"})
   .attr("class", "water")
@@ -118,14 +131,11 @@ select {
   var countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
   countryList = d3.select("body").append("select").attr("countryname", "countries");
 
-// This calls up our json and tsv of shapes of countries and their names. 
+
   queue()
   .defer(d3.json, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/website/final_website/world-110m.json")
   .defer(d3.tsv, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/website/final_website/moved.tsv")
   .await(ready);
-  //world-110m-country-names.tsv
-  //randomnums.tsv
-  //Main function
 
   function ready(error, world, countryData) {
 
@@ -133,7 +143,6 @@ select {
     countries = topojson.feature(world, world.objects.countries).features;
 
     var colorById = {};
-    //Adding countries to select. Don't touch this. 
 
     countryData.forEach(function(d) {
       countryById[d.id] = d.name;
@@ -143,14 +152,7 @@ select {
       option.property("value", d.id)
     });
 
-    // Would we need to put additional country data here? 
-    // in the above function we should append the correct colors for the countries from class, so when we create the var "world"
-
-    // Right here is the color testing 
     var colorscale = d3.scale.category20();
-    //var colornames = 
-    //Drawing countries on the globe. Don't touch this either 
-
 
     var world = svg.selectAll("path.land")
     .data(countries)
@@ -158,7 +160,6 @@ select {
     .attr("class", "land")
     .attr("d", path)
     .style("fill", function(d,i) { return colorscale(colorById[d.id]); })
-    //Drag event. Modify this here to control the movement of the globe - we want freehand based on the other model, pinch and zoom is dangerous, can we use a JS slider? http://andreruffert.github.io/rangeslider.js/?utm_content=buffer3f382&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
 
     .call(d3.behavior.drag()
       .origin(function() { var r = projection.rotate(); return {x: r[0] / sens, y: -r[1] / sens}; })
@@ -168,8 +169,6 @@ select {
         svg.selectAll("path.land").attr("d", path);
         svg.selectAll(".focused").classed("focused", focused = false);
       }))
-
-    //Mouse events: Do we want to allow for on-click shifting between country selected? 
 
     .on("mouseover", function(d) {
       countryTooltip.text(countryById[d.id])
@@ -187,17 +186,12 @@ select {
       .style("top", (d3.event.pageY - 15) + "px");
     });
 
-    //Country focus on option select. This helps direct the spinning of the globe and centers the country selected on the dropdown menu.
-    // Map zooming from mbostock: http://bl.ocks.org/mbostock/6242308
-
     d3.select("select").on("change", function() {
       var rotate = projection.rotate(),
       focusedCountry = country(countries, this),
       p = d3.geo.centroid(focusedCountry);
 
       svg.selectAll(".focused").classed("focused", focused = false);
-
-    //Globe rotating: Probably leave this here alone, operates mostly off the dropdown menu 
 
     (function transition() {
       d3.transition()
@@ -221,5 +215,18 @@ select {
 
   };
   </script>
+</div>
+<div class="text">
+<p>Humanitarian crises are real-world events that by their very nature, leave national policymakers, non-governmental organizations, and other humanitarian aid providers in a reactive posture.  This approach not only has a high financial cost; it is also costly in terms of the hidden and enduring human factor and social issues that arise out of these crises.</p>
+<p>For example, since 2012, the United States government has allocated over $4.5 billion USD in unplanned spending for foreign assistance to Syrian refugees. European countries are also diverting funds from their budgets to deal with the burgeoning costs of the growing Syrian refugee crisis. </p>
+<p>Our project has been to investigate and develop several proof-of-concept classification models to identify nations at stress and therefore vulnerable to humanitarian crisis if/when a precipitating event, such as war, economic recession, political turmoil, environmental or natural disaster, etc., occurs.</p>
+<p>What is a nation at stress?  For this study, we accepted the Norwegian Refugee Council (NRC) Internal Displacement Monitoring Centre’s model on displacement that identified four drivers (root causes or stressors) and a precipitating tipping point (trigger):</p>
+<p><ul>
+  <li>Environmental: including desertification and damming of tributaries.</li>
+  <li>Social: such as limited education opportunities; inter-communal tensions</li>
+  <li>Political: for example, poor urban planning and corruption.</li>
+</ul></p>
+</div>
+
 </body>
 </html>
