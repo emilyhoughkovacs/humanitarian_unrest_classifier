@@ -7,19 +7,89 @@
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
 <script src="http://d3js.org/queue.v1.min.js"></script>
-</head>
 
+</head>
+<style type="text/css">
+
+body {
+  background: #000000
+}
+
+p
+  {
+  font-size:14px;
+  font-family:arial;
+  color:white;
+  }
+h1
+  {
+  font-size:51px;
+  font-family:arial;
+  color:white;
+  }
+h3
+  {
+  font-size:37px;
+  font-family:arial;
+  color:white;
+  }
+
+
+.water {
+  fill: #00248F;
+}
+
+.land {
+  stroke: #FFF;
+  stroke-width: 0.7px;
+}
+
+.land:hover {
+  stroke-width: 1px;
+}
+
+.focused {
+  stroke-width: 1px;
+}
+
+select {
+  position: absolute;
+  top: 20px;
+  left: 580px;
+  border: solid #ccc 1px;
+  padding: 3px;
+  box-shadow: inset 1px 1px 2px #ddd8dc;
+}
+
+.countryTooltip {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+  background: #fff;
+  padding: 5px;
+  text-align: left;
+  border: solid #ccc 1px;
+  color: #666;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+</style>
 <body>
-<link rel="stylesheet" href="https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/style.css">
+
 <h1>Refugee Map</h1>
 <h3>Mcnulty Project, Metis</h3>
 <p>names</p>
+
+
   <script>
 
-  var width = 600,
+ var width = 600,
   height = 500,
   sens = 0.25,
   focused;
+
+  //Setting projection. Don't touch this. SERIOUSLY DONT TOUCH THIS OMG 
 
   var projection = d3.geo.orthographic()
   .scale(245)
@@ -30,9 +100,15 @@
   var path = d3.geo.path()
   .projection(projection);
 
+  //SVG container
+
   var svg = d3.select("body").append("svg")
   .attr("width", width)
   .attr("height", height);
+
+
+
+  //Adding water
 
   svg.append("path")
   .datum({type: "Sphere"})
@@ -40,30 +116,49 @@
   .attr("d", path);
 
   var countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
-  countryList = d3.select("body").append("select").attr("name", "countries");
+  countryList = d3.select("body").append("select").attr("countryname", "countries");
 
+// This calls up our json and tsv of shapes of countries and their names. 
   queue()
-  .defer(d3.json, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/D3%20index/world-110m.json")
-  .defer(d3.tsv, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/D3%20index/world-110m-country-names.tsv")
+  .defer(d3.json, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/website/final_website/world-110m.json")
+  .defer(d3.tsv, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/website/final_website/moved.tsv")
   .await(ready);
+  //world-110m-country-names.tsv
+  //randomnums.tsv
+  //Main function
 
   function ready(error, world, countryData) {
 
     var countryById = {},
     countries = topojson.feature(world, world.objects.countries).features;
 
+    var colorById = {};
+    //Adding countries to select. Don't touch this. 
+
     countryData.forEach(function(d) {
       countryById[d.id] = d.name;
+      colorById[d.id] = d.colortest;
       option = countryList.append("option");
       option.text(d.name);
-      option.property("value", d.id);
+      option.property("value", d.id)
     });
+
+    // Would we need to put additional country data here? 
+    // in the above function we should append the correct colors for the countries from class, so when we create the var "world"
+
+    // Right here is the color testing 
+    var colorscale = d3.scale.category20();
+    //var colornames = 
+    //Drawing countries on the globe. Don't touch this either 
+
 
     var world = svg.selectAll("path.land")
     .data(countries)
     .enter().append("path")
     .attr("class", "land")
     .attr("d", path)
+    .style("fill", function(d,i) { return colorscale(colorById[d.id]); })
+    //Drag event. Modify this here to control the movement of the globe - we want freehand based on the other model, pinch and zoom is dangerous, can we use a JS slider? http://andreruffert.github.io/rangeslider.js/?utm_content=buffer3f382&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
 
     .call(d3.behavior.drag()
       .origin(function() { var r = projection.rotate(); return {x: r[0] / sens, y: -r[1] / sens}; })
@@ -73,6 +168,8 @@
         svg.selectAll("path.land").attr("d", path);
         svg.selectAll(".focused").classed("focused", focused = false);
       }))
+
+    //Mouse events: Do we want to allow for on-click shifting between country selected? 
 
     .on("mouseover", function(d) {
       countryTooltip.text(countryById[d.id])
@@ -90,12 +187,17 @@
       .style("top", (d3.event.pageY - 15) + "px");
     });
 
+    //Country focus on option select. This helps direct the spinning of the globe and centers the country selected on the dropdown menu.
+    // Map zooming from mbostock: http://bl.ocks.org/mbostock/6242308
+
     d3.select("select").on("change", function() {
       var rotate = projection.rotate(),
       focusedCountry = country(countries, this),
       p = d3.geo.centroid(focusedCountry);
 
       svg.selectAll(".focused").classed("focused", focused = false);
+
+    //Globe rotating: Probably leave this here alone, operates mostly off the dropdown menu 
 
     (function transition() {
       d3.transition()
