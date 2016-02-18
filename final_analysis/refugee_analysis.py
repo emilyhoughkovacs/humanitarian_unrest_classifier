@@ -405,8 +405,8 @@ class getCrossValScoresBySSS(object):
             y_train, y_test = y.ix[train_index], y.ix[test_index]
 
             #remove data of test year from train set
-            X_train = X_train.loc[X_train.index.get_level_values('year') != year+year_delta]
-            y_train = y_train.loc[y_train.index.get_level_values('year') != year+year_delta]
+            X_train = X_train.loc[X_train.index.get_level_values('year') < year+year_delta]
+            y_train = y_train.loc[y_train.index.get_level_values('year') < year+year_delta]
 
             #Year prior is used later as the comparison between the desired year and its year prior
             _,year_prior = self.test_conversion_for_year(year=year, y_delta=(year_delta-1))
