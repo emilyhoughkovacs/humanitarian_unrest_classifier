@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from copy import deepcopy
 import pickle
+import random
 
 from sklearn import datasets
 from sklearn.cross_validation import train_test_split, StratifiedShuffleSplit
@@ -44,7 +45,7 @@ def getpickle(filename):
         with open(filename, 'rb') as picklefile:
             return pickle.load(picklefile)
     except:
-        return 'There was an error trying to read this file.  Please check the filename or path.'
+        print('There was an error trying to read this file.  Please check the filename or path.')
 
 def getScoreValues(X_train,
                   X_test,
@@ -145,7 +146,7 @@ class getCrossValScoresBySSS(object):
                  n_iter=50
                 ):
         self.model_list = [\
-                          KNeighborsClassifier(n_neighbors=2), \
+                          KNeighborsClassifier(n_neighbors=1), \
                           SVC(gamma=1, C=10, kernel='rbf'), \
                           SVC(),\
                           LogisticRegression(), \
@@ -156,7 +157,7 @@ class getCrossValScoresBySSS(object):
                           ]
 
         self.index_func = [\
-                          'KNeighborsClassifier(n_neighbors=2)', \
+                          'KNeighborsClassifier(n_neighbors=1)', \
                           'SVC(gamma=1, C=10, kernel=\'rbf\')', \
                           'SVC()',\
                           'LogisticRegression()', \
@@ -165,7 +166,8 @@ class getCrossValScoresBySSS(object):
                           'RandomForestClassifier(n_estimators=30)', \
                           'DecisionTreeClassifier()' \
                           ]
-
+        self.test_size = test_size
+        self.n_iter = n_iter
         self.initialize_scores()
         self.score_dict = {}
         self.colors =  getpickle('../security/tableaucolors.pkl')
@@ -173,7 +175,7 @@ class getCrossValScoresBySSS(object):
         self.y = local_y
         self.x_cols = list(local_X.columns)
         self.ratio = float(local_y.value_counts()[0]) / (float(local_y.value_counts()[1]))
-        self.sss = StratifiedShuffleSplit(y, n_iter=n_iter, test_size=test_size)
+        self.sss = StratifiedShuffleSplit(local_y, n_iter=n_iter, test_size=test_size)
 
     def initialize_scores(self):
         self.acc_array = []
@@ -193,49 +195,116 @@ class getCrossValScoresBySSS(object):
         #try:
             new_year = year+y_delta
             X_columns = self.X.columns
-            X_te = self.X.loc[year, :]
+            y_col = self.y.name
+            X_te = self.X.loc[new_year, :]
             y_te = self.y.loc[new_year, :]
             y_te = y_te.reset_index('countrycode').reset_index(drop=True).set_index('countrycode')
             full = pd.concat([X_te, y_te], axis=1)
             full = full.dropna()
             X_te = full[X_columns]
-            y_te = full['zscores']
+            y_te = full[y_col]
             return X_te, y_te
-
+            
         #except:
          #   print('Bad Year')
+            
+    #def future_prediction_generator(self, )   
+    
 
     def set_score_arrays(self, oversample, year, year_delta, model, get_features):
-        for train_index, test_index in self.sss:
-            #print("TRAIN:", train_index, "TEST:", test_index)
-            X_train, X_test = X.ix[train_index], X.ix[test_index]
-            y_train, y_test = y.ix[train_index], y.ix[test_index]
+        random_num = random.randint(1,self.n_iter)
+        i = 1
+        
+        if year != None:
+            new_x_cols = self.X.columns
+            new_y_col = self.y.name
+            new_X = deepcopy(self.X)
+            new_y = deepcopy(self.y)
+            new_y = new_y.reset_index()
+            new_y.year = new_y.year.subtract(year_delta)
+            new_y = new_y.set_index(['year','countrycode'])
+            new_df = pd.DataFrame()
+            new_df = pd.concat([new_X, new_y], axis=1)
+            new_df = new_df.dropna()
+            new_X = new_df[new_x_cols]
+            new_y = new_df[new_y_col]
 
-            #remove data of test year and all years after from train set
-            if year != None:
-                X_train = X_train.loc[X_train.index.get_level_values('year') < year+year_delta]
-                y_train = y_train.loc[y_train.index.get_level_values('year') < year+year_delta]
-                X_test, y_test = self.test_conversion_for_year(year=year, y_delta=year_delta)
+            new_sss = StratifiedShuffleSplit(new_y, n_iter=self.n_iter, test_size=self.test_size)
 
-            if oversample:
-                X_train, y_train = oversample_data(X_train, y_train, self.ratio)
+            for train_index, test_index in new_sss:
+                #print("TRAIN:", train_index, "TEST:", test_index)
+                X_train, X_test = new_X.ix[train_index], new_X.ix[test_index]
+                y_train, y_test = new_y.ix[train_index], new_y.ix[test_index]
 
-            accuracy_score_value, precision_score_value, \
-            recall_score_value, f1_score_value, roc_auc_value, \
-            feature_importances = getScoreValues(X_train,
-                                                 X_test,
-                                                 y_train,
-                                                 y_test,
-                                                 model=model,
-                                                 verbose=False,
-                                                 get_features=get_features)
+                #remove data of test year from train set
+                X_train = X_train.loc[X_train.index.get_level_values('year') < year]
+                y_train = y_train.loc[y_train.index.get_level_values('year') < year]
 
-            self.acc_array.append(accuracy_score_value)
-            self.prec_array.append(precision_score_value)
-            self.recall_array.append(recall_score_value)
-            self.f1_array.append(f1_score_value)
-            self.roc_auc_array.append(roc_auc_value)
-            self.feature_imp_array.append(feature_importances)
+                #Year prior is used later as the comparison between the desired year and its year prior
+                _,year_prior = X_te = new_X.loc[year-1, :], new_y.loc[year-1, :]
+                X_test, y_test = X_te = new_X.loc[year, :], new_y.loc[year, :]
+
+                if oversample:
+                    X_train, y_train = oversample_data(X_train, y_train, self.ratio)
+                
+                if i == random_num:
+                    self.temp_X_train, self.temp_y_train, self.temp_X_test, self.temp_y_test, = X_train, y_train, X_test, y_test
+
+                accuracy_score_value, precision_score_value, \
+                recall_score_value, f1_score_value, roc_auc_value, \
+                feature_importances = getScoreValues(X_train,
+                                                     X_test,
+                                                     y_train,
+                                                     y_test,
+                                                     model=model,
+                                                     verbose=False,
+                                                     get_features=get_features)
+
+                self.acc_array.append(accuracy_score_value)
+                self.prec_array.append(precision_score_value)
+                self.recall_array.append(recall_score_value)
+                self.f1_array.append(f1_score_value)
+                self.roc_auc_array.append(roc_auc_value)
+                self.feature_imp_array.append(feature_importances)
+                
+                i += 1
+        
+        else:
+            for train_index, test_index in self.sss:
+                #print("TRAIN:", train_index, "TEST:", test_index)
+                X_train, X_test = self.X.ix[train_index], self.X.ix[test_index]
+                y_train, y_test = self.y.ix[train_index], self.y.ix[test_index]
+
+                #remove data of test year and all years after from train set
+                if year != None:
+                    X_train = X_train.loc[X_train.index.get_level_values('year') < year+year_delta]
+                    y_train = y_train.loc[y_train.index.get_level_values('year') < year+year_delta]
+                    X_test, y_test = self.test_conversion_for_year(year=year, y_delta=year_delta)
+
+                if oversample:
+                    X_train, y_train = oversample_data(X_train, y_train, self.ratio)
+                
+                if i == random_num:
+                    self.temp_X_train, self.temp_y_train, self.temp_X_test, self.temp_y_test, = X_train, y_train, X_test, y_test
+
+                accuracy_score_value, precision_score_value, \
+                recall_score_value, f1_score_value, roc_auc_value, \
+                feature_importances = getScoreValues(X_train,
+                                                     X_test,
+                                                     y_train,
+                                                     y_test,
+                                                     model=model,
+                                                     verbose=False,
+                                                     get_features=get_features)
+
+                self.acc_array.append(accuracy_score_value)
+                self.prec_array.append(precision_score_value)
+                self.recall_array.append(recall_score_value)
+                self.f1_array.append(f1_score_value)
+                self.roc_auc_array.append(roc_auc_value)
+                self.feature_imp_array.append(feature_importances)
+                
+                i += 1
 
     def multi_plot_multi_model_metrics(self):
         index = list(range(len(self.model_list)))
@@ -353,7 +422,10 @@ class getCrossValScoresBySSS(object):
                          year_delta=0,
                          get_features=True,
                          get_cm=False,
-                         verbose=True
+                         verbose=True,
+                         output_prediction=False,
+                         output_filename='',
+                         return_features=False
                         ):
 
         self.initialize_scores()
@@ -363,11 +435,17 @@ class getCrossValScoresBySSS(object):
                               year_delta=year_delta,
                               model=model,
                               get_features=get_features)
-
+        
         if get_cm:
             # For getting a confusion matrix of the last model in the cross validated set
-            y_pred = self.get_cm_pred(model, X_train, y_train, X_test)
-            cm = confusion_matrix(y_test, y_pred)
+            y_pred = self.get_cm_pred(model, self.temp_X_train, self.temp_y_train, self.temp_X_test)
+            
+            if output_prediction:
+                pred_df = pd.DataFrame(y_pred, index=self.temp_X_test.index)
+                pred_df.to_csv(output_filename)
+                
+            cm = confusion_matrix(self.temp_y_test, y_pred)
+            print(cm)
             plt.figure()
             plot_confusion_matrix(cm)
 
@@ -389,6 +467,9 @@ class getCrossValScoresBySSS(object):
                                                                                         mean_f1, \
                                                                                         mean_roc_auc))
 
+        if return_features:
+            return zip(self.x_cols, mean_feature_imp)
+            
         else:
             return mean_acc, mean_prec, mean_recall, mean_f1, mean_roc_auc
 
@@ -398,19 +479,36 @@ class getCrossValScoresBySSS(object):
                                 year=None,
                                 year_delta=0):
         assert year != None
+        
+        new_x_cols = self.X.columns
+        new_y_col = self.y.name
+        new_X = deepcopy(self.X)
+        new_y = deepcopy(self.y)
+        #print(len(new_y), len(new_X))
+        new_y = new_y.reset_index()
+        new_y.year = new_y.year.subtract(year_delta)
+        new_y = new_y.set_index(['year','countrycode'])
+        new_df = pd.DataFrame()
+        new_df = pd.concat([new_X, new_y], axis=1)
+        new_df = new_df.dropna()
+        new_X = new_df[new_x_cols]
+        new_y = new_df[new_y_col]
+        #print(len(new_y), len(new_X))
+        
+        new_sss = StratifiedShuffleSplit(new_y, n_iter=self.n_iter, test_size=self.test_size)
 
-        for train_index, test_index in self.sss:
+        for train_index, test_index in new_sss:
             #print("TRAIN:", train_index, "TEST:", test_index)
-            X_train, X_test = X.ix[train_index], X.ix[test_index]
-            y_train, y_test = y.ix[train_index], y.ix[test_index]
+            X_train, X_test = new_X.ix[train_index], new_X.ix[test_index]
+            y_train, y_test = new_y.ix[train_index], new_y.ix[test_index]
 
             #remove data of test year from train set
-            X_train = X_train.loc[X_train.index.get_level_values('year') < year+year_delta]
-            y_train = y_train.loc[y_train.index.get_level_values('year') < year+year_delta]
+            X_train = X_train.loc[X_train.index.get_level_values('year') < year]
+            y_train = y_train.loc[y_train.index.get_level_values('year') < year]
 
             #Year prior is used later as the comparison between the desired year and its year prior
-            _,year_prior = self.test_conversion_for_year(year=year, y_delta=(year_delta-1))
-            X_test, y_test = self.test_conversion_for_year(year=year, y_delta=year_delta)
+            _,year_prior = X_te = new_X.loc[year-1, :], new_y.loc[year-1, :]
+            X_test, y_test = X_te = new_X.loc[year, :], new_y.loc[year, :]
 
             if oversample:
                 X_train, y_train = oversample_data(X_train, y_train, self.ratio)
