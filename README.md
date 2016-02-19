@@ -2,9 +2,9 @@
 ## Project McNulty: Team Saving the World
 Welcome to Project McNulty. Our goal is to identify areas in the world that may be susceptible to humanitarian unrest, specifically focusing on crises that might prompt a mass migration of refugees.
 
-Our team will create machine learning models to examine key factors that may lead to humanitarian unrest: economic, environmental and climatic, terrorism and national security, political and population demographics, and food. We will use PCA and other pre-processing methods, choose an appropriate model, and use the output of individual predictions as features for a final model.
+The number of refugees moving out of a country will be standardized by their population and classified a value of 'at stress' (1) or 'not at stress' (0).
 
-The final model will use pre-processing methods to ensure the results of our individual models are comparable. We will then create an index using a classification algorithm to assign countries a value of 'immediate risk (in crisis)', 'high risk', 'moderate risk', and 'low risk'.
+Our team will create supervised machine learning models to examine key factors that may lead to humanitarian unrest: economic, environmental and climatic, terrorism and national security, political and population demographics, and food. We will use pre-processing methods, choose an appropriate model, and use the output of individual predictions as features for a final model.
 
 This project will be beneficial to anyone with interest in geopolitics. Both firms and individuals with international interests could use this graph to make educated business, travel, and life decisions. We hope to package the project as an easy-to-navigate interactive infographic.
 
