@@ -53,7 +53,6 @@ The following features were examined in my model:
 * Population age 15-64<sup>3</sup>
 * Population Age 65+<sup>3</sup>
 
-
 1. Since 1995, Transparency International has kept a Corruption Perception Index on countries around the world. [According to their website](http://www.transparency.org/research/cpi/overview), this index's purpose is to 'score countries on how corrupt their public sectors are seen to be.' Fortunately for us, someone else has already compiled [all of this data into a single file](https://github.com/datasets/corruption-perceptions-index). The biggest challenge with this data is that after 2010 their method of indexing changed. The most likely options are to either exclude the latest data or to normalize the scores by each year.
 
 2. This political data will be combined with data from [Freedom House](https://freedomhouse.org/report/freedom-world/freedom-world-2016) which keeps an index on the political rights, civil liberties, freedom status of countries around the world.
