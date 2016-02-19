@@ -1,0 +1,250 @@
+id	colortest	countrycode	name
+4	3	AFG	Afghanistan
+8	1	ALB	Albania
+10	0	ATA	Antarctica
+12	1	DZA	Algeria
+16	0	ASM	American Samoa
+20	0	AND	Andorra
+24	1	AGO	Angola
+28	0	ATG	Antigua and Barbuda
+31	0	AZE	Azerbaijan
+32	0	ARG	Argentina
+36	0	AUS	Australia
+40	0	AUT	Austria
+44	0	BHS	Bahamas, The
+48	0	BHR	Bahrain
+50	0	BGD	Bangladesh
+51	1	ARM	Armenia
+52	0	BRB	Barbados
+56	0	BEL	Belgium
+60	0	BMU	Bermuda
+64	2	BTN	Bhutan
+68	0	BOL	Bolivia
+70	2	BIH	Bosnia and Herzegovina
+72	0	BWA	Botswana
+74	0	BVT	Bouvet Island
+76	0	BRA	Brazil
+84	0	BLZ	Belize
+86	0	IOT	British Indian Ocean Territory
+90	0	SLB	Solomon Islands
+92	0	VGB	British Virgin Islands
+96	0	BRN	Brunei
+100	0	BGR	Bulgaria
+104	2	MMR	Burma
+108	3	BDI	Burundi
+112	0	BLR	Belarus
+116	0	KHM	Cambodia
+120	1	CMR	Cameroon
+124	0	CAN	Canada
+132	0	CPV	Cabo Verde
+136	0	CYM	Cayman Islands
+140	1	CAF	Central African Republic
+144	2	LKA	Sri Lanka
+148	0	TCD	Chad
+152	0	CHL	Chile
+156	1	CHN	China
+158	0	TWN	Taiwan
+162	0	CXR	Christmas Island
+166	0	CCK	Cocos (Keeling) Islands
+170	3	COL	Colombia
+174	0	COM	Comoros
+175	0	MYT	Mayotte
+178	1	COG	Congo, Republic of the
+180	0	COD	Congo, Democratic Republic of the
+184	0	COK	Cook Islands
+188	0	CRI	Costa Rica
+191	2	HRV	Croatia
+192	0	CUB	Cuba
+196	0	CYP	Cyprus
+203	0	CZE	Czech Republic
+204	0	BEN	Benin
+208	0	DNK	Denmark
+212	0	DMA	Dominica
+214	0	DOM	Dominican Republic
+218	0	ECU	Ecuador
+222	0	SLV	El Salvador
+226	0	GNQ	Equatorial Guinea
+231	1	ETH	Ethiopia
+232	2	ERI	Eritrea
+233	0	EST	Estonia
+234	0	FRO	Faroe Islands
+238	0	FLK	Falkland Islands (Islas Malvinas)
+239	0	SGS	South Georgia and the Islands
+242	0	FJI	Fiji
+246	0	FIN	Finland
+249	0	FXX	France, Metropolitan
+250	0	FRA	France
+254	0	GUF	French Guiana
+258	0	PYF	French Polynesia
+260	0	ATF	French Southern and Antarctic Lands
+262	0	DJI	Djibouti
+266	0	GAB	Gabon
+268	1	GEO	Georgia
+270	0	GMB	Gambia, The
+275	0	PSE	Gaza Strip
+275	0	PSE	West Bank
+276	0	DEU	Germany
+288	0	GHA	Ghana
+292	0	GIB	Gibraltar
+296	0	KIR	Kiribati
+300	0	GRC	Greece
+304	0	GRL	Greenland
+308	0	GRD	Grenada
+312	0	GLP	Guadeloupe
+316	0	GUM	Guam
+320	0	GTM	Guatemala
+324	0	GIN	Guinea
+328	0	GUY	Guyana
+332	0	HTI	Haiti
+334	0	HMD	Heard Island and McDonald Islands
+336	0	VAT	Holy See (Vatican City)
+340	0	HND	Honduras
+344	0	HKG	Hong Kong
+348	0	HUN	Hungary
+352	0	ISL	Iceland
+356	2	IND	India
+360	0	IDN	Indonesia
+364	1	IRN	Iran
+368	2	IRQ	Iraq
+372	1	IRL	Ireland
+376	1	ISR	Israel
+380	0	ITA	Italy
+384	0	CIV	Cote d'Ivoire
+388	0	JAM	Jamaica
+392	0	JPN	Japan
+398	0	KAZ	Kazakhstan
+400	0	JOR	Jordan
+404	0	KEN	Kenya
+408	0	PRK	Korea, North
+410	0	KOR	Korea, South
+414	0	KWT	Kuwait
+417	0	KGZ	Kyrgyzstan
+418	0	LAO	Laos
+422	1	LBN	Lebanon
+426	0	LSO	Lesotho
+428	0	LVA	Latvia
+430	1	LBR	Liberia
+434	0	LBY	Libya
+438	0	LIE	Liechtenstein
+440	1	LTU	Lithuania
+442	1	LUX	Luxembourg
+446	0	MAC	Macau
+450	0	MDG	Madagascar
+454	0	MWI	Malawi
+458	0	MYS	Malaysia
+462	0	MDV	Maldives
+466	0	MLI	Mali
+470	0	MLT	Malta
+474	0	MTQ	Martinique
+478	2	MRT	Mauritania
+480	0	MUS	Mauritius
+484	0	MEX	Mexico
+492	0	MCO	Monaco
+496	0	MNG	Mongolia
+498	0	MDA	Moldova
+499	1	MNE	Montenegro
+500	0	MSR	Montserrat
+504	0	MAR	Morocco
+508	0	MOZ	Mozambique
+512	0	OMN	Oman
+516	0	NAM	Namibia
+520	0	NRU	Nauru
+524	0	NPL	Nepal
+528	0	NLD	Netherlands
+531	0	CUW	Curacao
+533	0	ABW	Aruba
+534	0	SXM	Sint Maarten
+540	0	NCL	New Caledonia
+548	0	VUT	Vanuatu
+554	0	NZL	New Zealand
+558	0	NIC	Nicaragua
+562	0	NER	Niger
+566	0	NGA	Nigeria
+570	0	NIU	Niue
+574	0	NFK	Norfolk Island
+578	0	NOR	Norway
+580	0	MNP	Northern Mariana Islands
+581	0	UMI	United States Minor Outlying Islands
+583	0	FSM	Micronesia, Federated States of
+584	0	MHL	Marshall Islands
+585	0	PLW	Palau
+586	1	PAK	Pakistan
+591	0	PAN	Panama
+598	0	PNG	Papua New Guinea
+600	0	PRY	Paraguay
+604	0	PER	Peru
+608	1	PHL	Philippines
+612	0	PCN	Pitcairn Islands
+616	0	POL	Poland
+620	0	PRT	Portugal
+624	0	GNB	Guinea-Bissau
+626	0	TLS	Timor-Leste
+630	1	PRI	Puerto Rico
+634	0	QAT	Qatar
+638	0	REU	Reunion
+642	0	ROU	Romania
+643	1	RUS	Russia
+646	2	RWA	Rwanda
+652	0	BLM	Saint Barthelemy
+654	0	SHN	Saint Helena, Ascension, and Tristan da Cunha
+659	0	KNA	Saint Kitts and Nevis
+660	0	AIA	Anguilla
+662	0	LCA	Saint Lucia
+663	0	MAF	Saint Martin
+666	0	SPM	Saint Pierre and Miquelon
+670	1	VCT	Saint Vincent and the Grenadines
+674	0	SMR	San Marino
+678	0	STP	Sao Tome and Principe
+682	0	SAU	Saudi Arabia
+686	0	SEN	Senegal
+688	1	SRB	Serbia
+690	0	SYC	Seychelles
+694	0	SLE	Sierra Leone
+702	0	SGP	Singapore
+703	0	SVK	Slovakia
+704	1	VNM	Vietnam
+705	0	SVN	Slovenia
+706	3	SOM	Somalia
+710	0	ZAF	South Africa
+716	2	ZWE	Zimbabwe
+724	0	ESP	Spain
+728	1	SSD	South Sudan
+729	3	SDN	Sudan
+732	0	ESH	Western Sahara
+740	0	SUR	Suriname
+744	0	SJM	Svalbard
+748	1	SWZ	Swaziland
+752	0	SWE	Sweden
+756	0	CHE	Switzerland
+760	2	SYR	Syria
+762	0	TJK	Tajikistan
+764	0	THA	Thailand
+768	1	TGO	Togo
+772	0	TKL	Tokelau
+776	0	TON	Tonga
+780	0	TTO	Trinidad and Tobago
+784	0	ARE	United Arab Emirates
+788	1	TUN	Tunisia
+792	0	TUR	Turkey
+795	0	TKM	Turkmenistan
+796	0	TCA	Turks and Caicos Islands
+798	0	TUV	Tuvalu
+800	0	UGA	Uganda
+804	0	UKR	Ukraine
+807	1	MKD	Macedonia
+818	0	EGY	Egypt
+826	0	GBR	United Kingdom
+831	0	GGY	Guernsey
+832	0	JEY	Jersey
+833	0	IMN	Isle of Man
+834	1	TZA	Tanzania
+840	1	USA	United States
+850	0	VIR	Virgin Islands
+854	0	BFA	Burkina Faso
+858	0	URY	Uruguay
+860	0	UZB	Uzbekistan
+862	0	VEN	Venezuela
+876	0	WLF	Wallis and Futuna
+882	0	WSM	Samoa
+887	0	YEM	Yemen
+894	0	ZMB	Zambia
