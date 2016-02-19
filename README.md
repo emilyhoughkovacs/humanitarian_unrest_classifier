@@ -10,6 +10,8 @@ This project will be beneficial to anyone with interest in geopolitics. Both fir
 
 We are sharing our data on a single database on one ec2 server. We are using Postico, a graphical interface, to locally connect to this shared postgres database.
 
+Here is a [link to our presentation](https://docs.google.com/presentation/d/1WgImQ5wSHe1FLMHrILH3z1NhyZJJyY8n57uhn4r5kzI/edit?usp=sharing).
+
 #### Economic ([Bryan Bumgardner](https://github.com/BryanBumgardner))
 The idea is simple: if you are in poverty, you aren't happy about it. Also, if something bad happens (war, natural disaster, change in leadership) poverty exacerbates the situation. The World Bank keeps detailed records of various economic factors that can contribute to poverty. The UN Refugee Agency’s (UNHCR) eighth annual High Commissioner’s Dialogue on Protection Challenges described several of these factors: high unemployment, especially among youth, uneven development, lack of access to international markets, and income inequality. To measure these horrible things, I'm looking at some data recorded by the World Bank, and using these measures as features:
 - The Gini Coefficient: the most commonly used way of measuring wealth distribution. The larger the wealth gap, the most restless the poorer residents.
