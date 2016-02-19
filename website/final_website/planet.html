@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Refugee Map</title>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+
+</head>
+<style type="text/css">
+
+body {
+  background: #000000
+}
+div.text {
+  padding: 50px;
+  margin: 50px;
+  vertical-align: center;
+}
+div.chart {
+  margin: 50px;
+  vertical-align: center;
+}
+script {
+  margin: 50px;
+}
+ul {
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 25px;
+  margin: 25px;
+  font-family: helvetica;
+  font-weight: normal;
+}
+p
+  {
+  font-size:14px;
+  font-family:helvetica;
+  color:white;
+  }
+h1
+  {
+  font-size:51px;
+  font-family:helvetica;
+  color:white;
+  }
+h3
+  {
+  font-size:37px;
+  font-family:helvetica;
+  color:white;
+  }
+
+
+.water {
+  fill: #00248F;
+}
+
+.land {
+  stroke: #FFF;
+  stroke-width: 0.7px;
+}
+
+.land:hover {
+  stroke-width: 1px;
+}
+
+.focused {
+  stroke-width: 1px;
+}
+
+select {
+  position: absolute;
+  top: 20px;
+  left: 580px;
+  border: solid #ccc 1px;
+  padding: 3px;
+  box-shadow: inset 1px 1px 2px #ddd8dc;
+}
+
+.countryTooltip {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+  background: #fff;
+  padding: 5px;
+  text-align: left;
+  border: solid #ccc 1px;
+  color: #666;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+</style>
+<body>
+
+<h1>Refugee Map</h1>
+<h3>Mcnulty Project, Metis</h3>
+<p>A proof of concept from Ken Myers, Ken Chadwick, Dan Yawitz, Emily Hough-Kovacs and Bryan Bumgardner</p>
+
+<div class="chart">
+  <script>
+
+ var width = 600,
+  height = 500,
+  sens = 0.25,
+  focused;
+
+  var projection = d3.geo.orthographic()
+  .scale(245)
+  .rotate([0, 0])
+  .translate([width / 2, height / 2])
+  .clipAngle(90);
+
+  var path = d3.geo.path()
+  .projection(projection);
+
+  //SVG container
+
+  var svg = d3.select("body").append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+  svg.append("path")
+  .datum({type: "Sphere"})
+  .attr("class", "water")
+  .attr("d", path);
+
+  var countryTooltip = d3.select("body").append("div").attr("class", "countryTooltip"),
+  countryList = d3.select("body").append("select").attr("countryname", "countries");
+
+
+  queue()
+  .defer(d3.json, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/website/final_website/world-110m.json")
+  .defer(d3.tsv, "https://raw.githubusercontent.com/emilyhoughkovacs/humanitarian_unrest_classifier/master/website/final_website/moved.tsv")
+  .await(ready);
+
+  function ready(error, world, countryData) {
+
+    var countryById = {},
+    countries = topojson.feature(world, world.objects.countries).features;
+
+    var colorById = {};
+
+    countryData.forEach(function(d) {
+      countryById[d.id] = d.name;
+      colorById[d.id] = d.colortest;
+      option = countryList.append("option");
+      option.text(d.name);
+      option.property("value", d.id)
+    });
+
+    var colorscale = d3.scale.category20();
+
+    var world = svg.selectAll("path.land")
+    .data(countries)
+    .enter().append("path")
+    .attr("class", "land")
+    .attr("d", path)
+    .style("fill", function(d,i) { return colorscale(colorById[d.id]); })
+
+    .call(d3.behavior.drag()
+      .origin(function() { var r = projection.rotate(); return {x: r[0] / sens, y: -r[1] / sens}; })
+      .on("drag", function() {
+        var rotate = projection.rotate();
+        projection.rotate([d3.event.x * sens, -d3.event.y * sens, rotate[2]]);
+        svg.selectAll("path.land").attr("d", path);
+        svg.selectAll(".focused").classed("focused", focused = false);
+      }))
+
+    .on("mouseover", function(d) {
+      countryTooltip.text(countryById[d.id])
+      .style("left", (d3.event.pageX + 7) + "px")
+      .style("top", (d3.event.pageY - 15) + "px")
+      .style("display", "block")
+      .style("opacity", 1);
+    })
+    .on("mouseout", function(d) {
+      countryTooltip.style("opacity", 0)
+      .style("display", "none");
+    })
+    .on("mousemove", function(d) {
+      countryTooltip.style("left", (d3.event.pageX + 7) + "px")
+      .style("top", (d3.event.pageY - 15) + "px");
+    });
+
+    d3.select("select").on("change", function() {
+      var rotate = projection.rotate(),
+      focusedCountry = country(countries, this),
+      p = d3.geo.centroid(focusedCountry);
+
+      svg.selectAll(".focused").classed("focused", focused = false);
+
+    (function transition() {
+      d3.transition()
+      .duration(2500)
+      .tween("rotate", function() {
+        var r = d3.interpolate(projection.rotate(), [-p[0], -p[1]]);
+        return function(t) {
+          projection.rotate(r(t));
+          svg.selectAll("path").attr("d", path)
+          .classed("focused", function(d, i) { return d.id == focusedCountry.id ? focused = d : false; });
+        };
+      })
+      })();
+    });
+
+    function country(cnt, sel) { 
+      for(var i = 0, l = cnt.length; i < l; i++) {
+        if(cnt[i].id == sel.value) {return cnt[i];}
+      }
+    };
+
+  };
+  </script>
+</div>
+<div class="text">
+<p>Humanitarian crises are often short-notice, highly volatile events that leave national policymakers, non-governmental organizations, and other humanitarian aid providers making decisions reactively.  This approach not only has a high financial cost; it is also costly in terms of the hidden and enduring human rights violations and social issues that arise out of these crises.</p>
+<p>For example, since 2012, the United States government has allocated over $4.5 billion USD in unplanned spending for foreign assistance to Syrian refugees. European countries are also diverting funds from their budgets to deal with the burgeoning costs of the growing Syrian refugee crisis. Had policymakers been advised of the impending crisis early enough, they could make proactive decisions to tackle the crisis.</p>
+<p>For our project, we investigated and developed several proof-of-concept classification models to identify nations at stress and therefore vulnerable to humanitarian crises if (or when) a precipitating event, such as war, economic recession, political turmoil, environmental or natural disaster, etc., occurs.</p>
+<p>What is a nation at stress? For this study, we accepted the <a href="http://www.nrc.no/?aid=9169951#.VsZVEpMrL-Y">Norwegian Refugee Council (NRC) Internal Displacement Monitoring Centre’s</a> model on displacement that identified four drivers (root causes or stressors) and a precipitating tipping point (trigger):</p>
+<p><ul>
+  <li>Environmental: including desertification and damming of tributaries.</li>
+  <li>Social: such as limited education opportunities; inter-communal tensions</li>
+  <li>Political: for example, poor urban planning and corruption.</li>
+</ul></p>
+<p>The tipping point:</p>
+<p>Proximate precipitating events that leave people with little choice but to flee their homes. These are visible events in the wider environment that can threaten people’s physical or economic security.</p>
+<p>The intent of this effort is not to predict the tipping points, but to identify those nations in which the drivers for human displacement are present.  Follow-on development could see a dynamic and live-feed classification methodology to identify nations at stress 2-3 years out, affording governments and NGO’s opportunities to implement directed risk mitigation programs as applicable.</p>
+</div>
+
+</body>
+</html>
