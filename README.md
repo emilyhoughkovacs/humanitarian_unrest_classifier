@@ -34,11 +34,30 @@ Sources:
 * Uppsala Universitet, Depaterment of Peace and Conflict Research, Conflict Data Program - [UCDP/PRIO Armed Conflict Dataset v.4-2015, 1946 – 2014](http://www.pcr.uu.se/research/ucdp/datasets/ucdp_prio_armed_conflict_dataset/)
 
 #### Political and Demographics ([Ken Myers](https://github.com/kennmyers))
-Since 1995, Transparency International has kept a Corruption Perception Index on countries around the world. [According to their website](http://www.transparency.org/research/cpi/overview), this index's purpose is to 'score countries on how corrupt their public sectors are seen to be.' Fortunately for us, someone else has already compiled [all of this data into a single file](https://github.com/datasets/corruption-perceptions-index). The biggest challenge with this data is that after 2010 their method of indexing changed. The most likely options are to either exclude the latest data or to normalize the scores by each year.
+The following features were examined in my model:
+###### Politics
 
-This political data will be combined with data from [Freedom House](https://freedomhouse.org/report/freedom-world/freedom-world-2016) which keeps an index on the political rights, civil liberties, freedom status of countries around the world.
+* Corruption Perception Index<sup>1</sup>
+* Civil Liberties<sup>2</sup>
+* Political Rights<sup>2</sup>
+* Freedom Status<sup>2</sup>
+* Ratio of Female Legislators<sup>3</sup>
 
-Age and gender demographics data from [The World Bank](http://data.worldbank.org/indicator) will also be analyzed. I used the dataset available from [Kaggle](https://www.kaggle.com/worldbank/world-development-indicators) which is slightly transformed from the original data. From these sets of data we will try to see if it is possible to predict a country's risk of a humanitarian crisis by their corruption perception and the their population's demographic. Such as, if a population has a higher percentage of males or a higher percentage of younger people, are they more likely to enter a crisis when they perceive their country as being corrupt.
+###### General Demographics
+
+* Gender Ratio<sup>3</sup>
+* Population Growth<sup>3</sup>
+* Age<5 Mortality<sup>3</sup>
+* Life Expectancy<sup>3</sup>
+* Population age 0-14<sup>3</sup>
+* Population age 15-64<sup>3</sup>
+* Population Age 65+<sup>3</sup>
+
+1. Since 1995, Transparency International has kept a Corruption Perception Index on countries around the world. [According to their website](http://www.transparency.org/research/cpi/overview), this index's purpose is to 'score countries on how corrupt their public sectors are seen to be.' Fortunately for us, someone else has already compiled [all of this data into a single file](https://github.com/datasets/corruption-perceptions-index). The biggest challenge with this data is that after 2010 their method of indexing changed. The most likely options are to either exclude the latest data or to normalize the scores by each year.
+
+2. This political data will be combined with data from [Freedom House](https://freedomhouse.org/report/freedom-world/freedom-world-2016) which keeps an index on the political rights, civil liberties, freedom status of countries around the world.
+
+3. Age and gender demographics data from [The World Bank](http://data.worldbank.org/indicator) will also be analyzed. I used the dataset available from [Kaggle](https://www.kaggle.com/worldbank/world-development-indicators) which is slightly transformed from the original data. From these sets of data we will try to see if it is possible to predict a country's risk of a humanitarian crisis by their corruption perception and the their population's demographic. Such as, if a population has a higher percentage of males or a higher percentage of younger people, are they more likely to enter a crisis when they perceive their country as being corrupt.
 
 #### Food ([Emily Hough-Kovacs](https://github.com/emilyhoughkovacs/))
 The data for the food algorithm comes primarily from the World Food Programme's [global food prices database](https://data.hdx.rwlabs.org/dataset/wfp-food-prices/resource/b5b850a5-76da-4c33-a410-fd447deac042). This 580,000 row database contains monthly price information on many food prices in markets across the globe. The advantage of this data is that it is precise to the city level (country, region and city) as well as to the month level. The prediction algorithm will be chosen by what best optimizes time-series at that level. Some foreseeable roadblocks include prices that may be reported in local currencies. Another consideration is considering the purchasing power of a citizen in each region. Further exploratory analysis may be required.
