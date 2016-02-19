@@ -1,250 +1,1 @@
-id	colortest	countrycode	name
-4.0	3.0	AFG	Afghanistan
-8.0	1.0	ALB	Albania
-10.0	0.0	ATA	Antarctica
-12.0	1.0	DZA	Algeria
-16.0	0.0	ASM	American Samoa
-20.0	0.0	AND	Andorra
-24.0	1.0	AGO	Angola
-28.0	0.0	ATG	Antigua and Barbuda
-31.0	0.0	AZE	Azerbaijan
-32.0	0.0	ARG	Argentina
-36.0	0.0	AUS	Australia
-40.0	0.0	AUT	Austria
-44.0	0.0	BHS	Bahamas, The
-48.0	0.0	BHR	Bahrain
-50.0	0.0	BGD	Bangladesh
-51.0	1.0	ARM	Armenia
-52.0	0.0	BRB	Barbados
-56.0	0.0	BEL	Belgium
-60.0	0.0	BMU	Bermuda
-64.0	2.0	BTN	Bhutan
-68.0	0.0	BOL	Bolivia
-70.0	2.0	BIH	Bosnia and Herzegovina
-72.0	0.0	BWA	Botswana
-74.0	0.0	BVT	Bouvet Island
-76.0	0.0	BRA	Brazil
-84.0	0.0	BLZ	Belize
-86.0	0.0	IOT	British Indian Ocean Territory
-90.0	0.0	SLB	Solomon Islands
-92.0	0.0	VGB	British Virgin Islands
-96.0	0.0	BRN	Brunei
-100.0	0.0	BGR	Bulgaria
-104.0	2.0	MMR	Burma
-108.0	3.0	BDI	Burundi
-112.0	0.0	BLR	Belarus
-116.0	0.0	KHM	Cambodia
-120.0	1.0	CMR	Cameroon
-124.0	0.0	CAN	Canada
-132.0	0.0	CPV	Cabo Verde
-136.0	0.0	CYM	Cayman Islands
-140.0	1.0	CAF	Central African Republic
-144.0	2.0	LKA	Sri Lanka
-148.0	0.0	TCD	Chad
-152.0	0.0	CHL	Chile
-156.0	1.0	CHN	China
-158.0	0.0	TWN	Taiwan
-162.0	0.0	CXR	Christmas Island
-166.0	0.0	CCK	Cocos (Keeling) Islands
-170.0	3.0	COL	Colombia
-174.0	0.0	COM	Comoros
-175.0	0.0	MYT	Mayotte
-178.0	1.0	COG	Congo, Republic of the
-180.0	0.0	COD	Congo, Democratic Republic of the
-184.0	0.0	COK	Cook Islands
-188.0	0.0	CRI	Costa Rica
-191.0	2.0	HRV	Croatia
-192.0	0.0	CUB	Cuba
-196.0	0.0	CYP	Cyprus
-203.0	0.0	CZE	Czech Republic
-204.0	0.0	BEN	Benin
-208.0	0.0	DNK	Denmark
-212.0	0.0	DMA	Dominica
-214.0	0.0	DOM	Dominican Republic
-218.0	0.0	ECU	Ecuador
-222.0	0.0	SLV	El Salvador
-226.0	0.0	GNQ	Equatorial Guinea
-231.0	1.0	ETH	Ethiopia
-232.0	2.0	ERI	Eritrea
-233.0	0.0	EST	Estonia
-234.0	0.0	FRO	Faroe Islands
-238.0	0.0	FLK	Falkland Islands (Islas Malvinas)
-239.0	0.0	SGS	South Georgia and the Islands
-242.0	0.0	FJI	Fiji
-246.0	0.0	FIN	Finland
-249.0	0.0	FXX	France, Metropolitan
-250.0	0.0	FRA	France
-254.0	0.0	GUF	French Guiana
-258.0	0.0	PYF	French Polynesia
-260.0	0.0	ATF	French Southern and Antarctic Lands
-262.0	0.0	DJI	Djibouti
-266.0	0.0	GAB	Gabon
-268.0	1.0	GEO	Georgia
-270.0	0.0	GMB	Gambia, The
-275.0	0.0	PSE	Gaza Strip
-275.0	0.0	PSE	West Bank
-276.0	0.0	DEU	Germany
-288.0	0.0	GHA	Ghana
-292.0	0.0	GIB	Gibraltar
-296.0	0.0	KIR	Kiribati
-300.0	0.0	GRC	Greece
-304.0	0.0	GRL	Greenland
-308.0	0.0	GRD	Grenada
-312.0	0.0	GLP	Guadeloupe
-316.0	0.0	GUM	Guam
-320.0	0.0	GTM	Guatemala
-324.0	0.0	GIN	Guinea
-328.0	0.0	GUY	Guyana
-332.0	0.0	HTI	Haiti
-334.0	0.0	HMD	Heard Island and McDonald Islands
-336.0	0.0	VAT	Holy See (Vatican City)
-340.0	0.0	HND	Honduras
-344.0	0.0	HKG	Hong Kong
-348.0	0.0	HUN	Hungary
-352.0	0.0	ISL	Iceland
-356.0	2.0	IND	India
-360.0	0.0	IDN	Indonesia
-364.0	1.0	IRN	Iran
-368.0	2.0	IRQ	Iraq
-372.0	1.0	IRL	Ireland
-376.0	1.0	ISR	Israel
-380.0	0.0	ITA	Italy
-384.0	0.0	CIV	Cote d'Ivoire
-388.0	0.0	JAM	Jamaica
-392.0	0.0	JPN	Japan
-398.0	0.0	KAZ	Kazakhstan
-400.0	0.0	JOR	Jordan
-404.0	0.0	KEN	Kenya
-408.0	0.0	PRK	Korea, North
-410.0	0.0	KOR	Korea, South
-414.0	0.0	KWT	Kuwait
-417.0	0.0	KGZ	Kyrgyzstan
-418.0	0.0	LAO	Laos
-422.0	1.0	LBN	Lebanon
-426.0	0.0	LSO	Lesotho
-428.0	0.0	LVA	Latvia
-430.0	1.0	LBR	Liberia
-434.0	0.0	LBY	Libya
-438.0	0.0	LIE	Liechtenstein
-440.0	1.0	LTU	Lithuania
-442.0	1.0	LUX	Luxembourg
-446.0	0.0	MAC	Macau
-450.0	0.0	MDG	Madagascar
-454.0	0.0	MWI	Malawi
-458.0	0.0	MYS	Malaysia
-462.0	0.0	MDV	Maldives
-466.0	0.0	MLI	Mali
-470.0	0.0	MLT	Malta
-474.0	0.0	MTQ	Martinique
-478.0	2.0	MRT	Mauritania
-480.0	0.0	MUS	Mauritius
-484.0	0.0	MEX	Mexico
-492.0	0.0	MCO	Monaco
-496.0	0.0	MNG	Mongolia
-498.0	0.0	MDA	Moldova
-499.0	1.0	MNE	Montenegro
-500.0	0.0	MSR	Montserrat
-504.0	0.0	MAR	Morocco
-508.0	0.0	MOZ	Mozambique
-512.0	0.0	OMN	Oman
-516.0	0.0	NAM	Namibia
-520.0	0.0	NRU	Nauru
-524.0	0.0	NPL	Nepal
-528.0	0.0	NLD	Netherlands
-531.0	0.0	CUW	Curacao
-533.0	0.0	ABW	Aruba
-534.0	0.0	SXM	Sint Maarten
-540.0	0.0	NCL	New Caledonia
-548.0	0.0	VUT	Vanuatu
-554.0	0.0	NZL	New Zealand
-558.0	0.0	NIC	Nicaragua
-562.0	0.0	NER	Niger
-566.0	0.0	NGA	Nigeria
-570.0	0.0	NIU	Niue
-574.0	0.0	NFK	Norfolk Island
-578.0	0.0	NOR	Norway
-580.0	0.0	MNP	Northern Mariana Islands
-581.0	0.0	UMI	United States Minor Outlying Islands
-583.0	0.0	FSM	Micronesia, Federated States of
-584.0	0.0	MHL	Marshall Islands
-585.0	0.0	PLW	Palau
-586.0	1.0	PAK	Pakistan
-591.0	0.0	PAN	Panama
-598.0	0.0	PNG	Papua New Guinea
-600.0	0.0	PRY	Paraguay
-604.0	0.0	PER	Peru
-608.0	1.0	PHL	Philippines
-612.0	0.0	PCN	Pitcairn Islands
-616.0	0.0	POL	Poland
-620.0	0.0	PRT	Portugal
-624.0	0.0	GNB	Guinea-Bissau
-626.0	0.0	TLS	Timor-Leste
-630.0	1.0	PRI	Puerto Rico
-634.0	0.0	QAT	Qatar
-638.0	0.0	REU	Reunion
-642.0	0.0	ROU	Romania
-643.0	1.0	RUS	Russia
-646.0	2.0	RWA	Rwanda
-652.0	0.0	BLM	Saint Barthelemy
-654.0	0.0	SHN	Saint Helena, Ascension, and Tristan da Cunha
-659.0	0.0	KNA	Saint Kitts and Nevis
-660.0	0.0	AIA	Anguilla
-662.0	0.0	LCA	Saint Lucia
-663.0	0.0	MAF	Saint Martin
-666.0	0.0	SPM	Saint Pierre and Miquelon
-670.0	1.0	VCT	Saint Vincent and the Grenadines
-674.0	0.0	SMR	San Marino
-678.0	0.0	STP	Sao Tome and Principe
-682.0	0.0	SAU	Saudi Arabia
-686.0	0.0	SEN	Senegal
-688.0	1.0	SRB	Serbia
-690.0	0.0	SYC	Seychelles
-694.0	0.0	SLE	Sierra Leone
-702.0	0.0	SGP	Singapore
-703.0	0.0	SVK	Slovakia
-704.0	1.0	VNM	Vietnam
-705.0	0.0	SVN	Slovenia
-706.0	3.0	SOM	Somalia
-710.0	0.0	ZAF	South Africa
-716.0	2.0	ZWE	Zimbabwe
-724.0	0.0	ESP	Spain
-728.0	1.0	SSD	South Sudan
-729.0	3.0	SDN	Sudan
-732.0	0.0	ESH	Western Sahara
-740.0	0.0	SUR	Suriname
-744.0	0.0	SJM	Svalbard
-748.0	1.0	SWZ	Swaziland
-752.0	0.0	SWE	Sweden
-756.0	0.0	CHE	Switzerland
-760.0	2.0	SYR	Syria
-762.0	0.0	TJK	Tajikistan
-764.0	0.0	THA	Thailand
-768.0	1.0	TGO	Togo
-772.0	0.0	TKL	Tokelau
-776.0	0.0	TON	Tonga
-780.0	0.0	TTO	Trinidad and Tobago
-784.0	0.0	ARE	United Arab Emirates
-788.0	1.0	TUN	Tunisia
-792.0	0.0	TUR	Turkey
-795.0	0.0	TKM	Turkmenistan
-796.0	0.0	TCA	Turks and Caicos Islands
-798.0	0.0	TUV	Tuvalu
-800.0	0.0	UGA	Uganda
-804.0	0.0	UKR	Ukraine
-807.0	1.0	MKD	Macedonia
-818.0	0.0	EGY	Egypt
-826.0	0.0	GBR	United Kingdom
-831.0	0.0	GGY	Guernsey
-832.0	0.0	JEY	Jersey
-833.0	0.0	IMN	Isle of Man
-834.0	1.0	TZA	Tanzania
-840.0	1.0	USA	United States
-850.0	0.0	VIR	Virgin Islands
-854.0	0.0	BFA	Burkina Faso
-858.0	0.0	URY	Uruguay
-860.0	0.0	UZB	Uzbekistan
-862.0	0.0	VEN	Venezuela
-876.0	0.0	WLF	Wallis and Futuna
-882.0	0.0	WSM	Samoa
-887.0	0.0	YEM	Yemen
-894.0	0.0	ZMB	Zambia
+id	colortest	countrycode	name4	4	AFG	Afghanistan8	3	ALB	Albania10	2	ATA	Antarctica12	1	DZA	Algeria16	4	ASM	American Samoa20	3	AND	Andorra24	2	AGO	Angola28	1	ATG	Antigua and Barbuda31	1	AZE	Azerbaijan32	1	ARG	Argentina36	1	AUS	Australia40	1	AUT	Austria44	1	BHS	"Bahamas, The"48	1	BHR	Bahrain50	2	BGD	Bangladesh51	2	ARM	Armenia52	2	BRB	Barbados56	2	BEL	Belgium60	2	BMU	Bermuda64	2	BTN	Bhutan68	2	BOL	Bolivia70	2	BIH	Bosnia and Herzegovina72	2	BWA	Botswana74	2	BVT	Bouvet Island76	2	BRA	Brazil84	2	BLZ	Belize86	2	IOT	British Indian Ocean Territory90	2	SLB	Solomon Islands92	3	VGB	British Virgin Islands96	3	BRN	Brunei100	3	BGR	Bulgaria104	3	MMR	Burma108	3	BDI	Burundi112	3	BLR	Belarus116	3	KHM	Cambodia120	3	CMR	Cameroon124	3	CAN	Canada132	3	CPV	Cabo Verde136	3	CYM	Cayman Islands140	3	CAF	Central African Republic144	3	LKA	Sri Lanka148	4	TCD	Chad152	4	CHL	Chile156	4	CHN	China158	4	TWN	Taiwan162	4	CXR	Christmas Island166	4	CCK	Cocos (Keeling) Islands170	4	COL	Colombia174	4	COM	Comoros175	4	MYT	Mayotte178	4	COG	"Congo, Republic of the"180	4	COD	"Congo, Democratic Republic of the"184	4	COK	Cook Islands188	4	CRI	Costa Rica191	4	HRV	Croatia192	4	CUB	Cuba196	4	CYP	Cyprus203	4	CZE	Czech Republic204	4	BEN	Benin208	4	DNK	Denmark212	4	DMA	Dominica214	5	DOM	Dominican Republic218	5	ECU	Ecuador222	5	SLV	El Salvador226	5	GNQ	Equatorial Guinea231	5	ETH	Ethiopia232	5	ERI	Eritrea233	5	EST	Estonia234	5	FRO	Faroe Islands238	5	FLK	Falkland Islands (Islas Malvinas)239	5	SGS	South Georgia and the Islands242	5	FJI	Fiji246	5	FIN	Finland249	5	FXX	"France, Metropolitan"250	5	FRA	France254	2	GUF	French Guiana258	2	PYF	French Polynesia260	2	ATF	French Southern and Antarctic Lands262	2	DJI	Djibouti266	2	GAB	Gabon268	2	GEO	Georgia270	2	GMB	"Gambia, The"275	2	PSE	Gaza Strip275	2	PSE	West Bank276	2	DEU	Germany288	2	GHA	Ghana292	2	GIB	Gibraltar296	2	KIR	Kiribati300	2	GRC	Greece304	4	GRL	Greenland308	3	GRD	Grenada312	3	GLP	Guadeloupe316	3	GUM	Guam320	3	GTM	Guatemala324	3	GIN	Guinea328	3	GUY	Guyana332	3	HTI	Haiti334	3	HMD	Heard Island and McDonald Islands336	3	VAT	Holy See (Vatican City)340	3	HND	Honduras344	3	HKG	Hong Kong348	3	HUN	Hungary352	4	ISL	Iceland356	4	IND	India360	4	IDN	Indonesia364	4	IRN	Iran368	4	IRQ	Iraq372	4	IRL	Ireland376	4	ISR	Israel380	4	ITA	Italy384	4	CIV	Cote d'Ivoire388	5	JAM	Jamaica392	5	JPN	Japan398	5	KAZ	Kazakhstan400	5	JOR	Jordan404	5	KEN	Kenya408	5	PRK	"Korea, North"410	5	KOR	"Korea, South"414	5	KWT	Kuwait417	5	KGZ	Kyrgyzstan418	5	LAO	Laos422	5	LBN	Lebanon426	5	LSO	Lesotho428	5	LVA	Latvia430	5	LBR	Liberia434	5	LBY	Libya438	4	LIE	Liechtenstein440	4	LTU	Lithuania442	4	LUX	Luxembourg446	4	MAC	Macau450	2	MDG	Madagascar454	2	MWI	Malawi458	2	MYS	Malaysia462	2	MDV	Maldives466	2	MLI	Mali470	2	MLT	Malta474	2	MTQ	Martinique478	2	MRT	Mauritania480	2	MUS	Mauritius484	2	MEX	Mexico492	2	MCO	Monaco496	2	MNG	Mongolia498	2	MDA	Moldova499	2	MNE	Montenegro500	2	MSR	Montserrat504	2	MAR	Morocco508	2	MOZ	Mozambique512	2	OMN	Oman516	2	NAM	Namibia520	2	NRU	Nauru524	2	NPL	Nepal528	2	NLD	Netherlands531	2	CUW	Curacao533	2	ABW	Aruba534	2	SXM	Sint Maarten540	2	NCL	New Caledonia548	2	VUT	Vanuatu554	2	NZL	New Zealand558	4	NIC	Nicaragua562	3	NER	Niger566	3	NGA	Nigeria570	3	NIU	Niue574	3	NFK	Norfolk Island578	3	NOR	Norway580	3	MNP	Northern Mariana Islands581	3	UMI	United States Minor Outlying Islands583	3	FSM	"Micronesia, Federated States of"584	3	MHL	Marshall Islands585	3	PLW	Palau586	3	PAK	Pakistan591	3	PAN	Panama598	3	PNG	Papua New Guinea600	1	PRY	Paraguay604	1	PER	Peru608	1	PHL	Philippines612	1	PCN	Pitcairn Islands616	1	POL	Poland620	1	PRT	Portugal624	1	GNB	Guinea-Bissau626	1	TLS	Timor-Leste630	1	PRI	Puerto Rico634	1	QAT	Qatar638	1	REU	Reunion642	1	ROU	Romania643	1	RUS	Russia646	1	RWA	Rwanda652	1	BLM	Saint Barthelemy654	1	SHN	"Saint Helena, Ascension, and Tristan da Cunha"659	1	KNA	Saint Kitts and Nevis660	1	AIA	Anguilla662	1	LCA	Saint Lucia663	4	MAF	Saint Martin666	4	SPM	Saint Pierre and Miquelon670	4	VCT	Saint Vincent and the Grenadines674	4	SMR	San Marino678	4	STP	Sao Tome and Principe682	4	SAU	Saudi Arabia686	4	SEN	Senegal688	2	SRB	Serbia690	2	SYC	Seychelles694	2	SLE	Sierra Leone702	2	SGP	Singapore703	2	SVK	Slovakia704	2	VNM	Vietnam705	2	SVN	Slovenia706	2	SOM	Somalia710	2	ZAF	South Africa716	2	ZWE	Zimbabwe724	2	ESP	Spain728	2	SSD	South Sudan729	2	SDN	Sudan732	2	ESH	Western Sahara740	2	SUR	Suriname744	4	SJM	Svalbard748	4	SWZ	Swaziland752	4	SWE	Sweden756	4	CHE	Switzerland760	4	SYR	Syria762	4	TJK	Tajikistan764	4	THA	Thailand768	3	TGO	Togo772	3	TKL	Tokelau776	3	TON	Tonga780	3	TTO	Trinidad and Tobago784	3	ARE	United Arab Emirates788	3	TUN	Tunisia792	3	TUR	Turkey795	3	TKM	Turkmenistan796	3	TCA	Turks and Caicos Islands798	3	TUV	Tuvalu800	3	UGA	Uganda804	3	UKR	Ukraine807	3	MKD	Macedonia818	3	EGY	Egypt826	3	GBR	United Kingdom831	3	GGY	Guernsey832	4	JEY	Jersey833	4	IMN	Isle of Man834	4	TZA	Tanzania840	1	USA	United States850	1	VIR	Virgin Islands854	1	BFA	Burkina Faso858	1	URY	Uruguay860	1	UZB	Uzbekistan862	1	VEN	Venezuela876	1	WLF	Wallis and Futuna882	4	WSM	Samoa887	4	YEM	Yemen894	4	ZMB	Zambia
